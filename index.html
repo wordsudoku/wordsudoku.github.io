@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Word Sudoku"/>
+<title>Word Sudoku</title>
+<link rel="stylesheet" href="cssnormalize-min.css"/>
+<link rel="stylesheet" href="sudoku.css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap"/>
+</head>
+<body>
+<div id="center">
+<table class="board" id="board">
+  <tbody>
+    <tr>
+      <td id="cell11" class="row1 col1 fixed">3</td>
+      <td id="cell12" class="row1 col2"></td>
+      <td id="cell13" class="row1 col3 fixed">2</td>
+      <td id="cell14" class="row1 col4 fixed">1</td>
+      <td id="cell15" class="row1 col5"></td>
+      <td id="cell16" class="row1 col6 fixed">4</td>
+      <td id="cell17" class="row1 col7"></td>
+      <td id="cell18" class="row1 col8 fixed">9</td>
+      <td id="cell19" class="row1 col9 fixed">6</td>
+    </tr>
+    <tr>
+      <td id="cell21" class="row2 col1 fixed">8</td>
+      <td id="cell22" class="row2 col2 fixed">4</td>
+      <td id="cell23" class="row2 col3"></td>
+      <td id="cell24" class="row2 col4 fixed">6</td>
+      <td id="cell25" class="row2 col5"></td>
+      <td id="cell26" class="row2 col6"></td>
+      <td id="cell27" class="row2 col7"></td>
+      <td id="cell28" class="row2 col8 fixed">5</td>
+      <td id="cell29" class="row2 col9"></td>
+    </tr>
+    <tr>
+      <td id="cell31" class="row3 col1"></td>
+      <td id="cell32" class="row3 col2"></td>
+      <td id="cell33" class="row3 col3"></td>
+      <td id="cell34" class="row3 col4"></td>
+      <td id="cell35" class="row3 col5 fixed">7</td>
+      <td id="cell36" class="row3 col6"></td>
+      <td id="cell37" class="row3 col7"></td>
+      <td id="cell38" class="row3 col8"></td>
+      <td id="cell39" class="row3 col9 fixed">3</td>
+    </tr>
+    <tr>
+      <td id="cell41" class="row4 col1 fixed">5</td>
+      <td id="cell42" class="row4 col2"></td>
+      <td id="cell43" class="row4 col3"></td>
+      <td id="cell44" class="row4 col4"></td>
+      <td id="cell45" class="row4 col5"></td>
+      <td id="cell46" class="row4 col6"></td>
+      <td id="cell47" class="row4 col7"></td>
+      <td id="cell48" class="row4 col8 fixed">2</td>
+      <td id="cell49" class="row4 col9 fixed">9</td>
+    </tr>
+    <tr>
+      <td id="cell51" class="row5 col1"></td>
+      <td id="cell52" class="row5 col2"></td>
+      <td id="cell53" class="row5 col3 fixed">9</td>
+      <td id="cell54" class="row5 col4"></td>
+      <td id="cell55" class="row5 col5"></td>
+      <td id="cell56" class="row5 col6"></td>
+      <td id="cell57" class="row5 col7 fixed">3</td>
+      <td id="cell58" class="row5 col8"></td>
+      <td id="cell59" class="row5 col9"></td>
+    </tr>
+    <tr>
+      <td id="cell61" class="row6 col1 fixed">2</td>
+      <td id="cell62" class="row6 col2 fixed">7</td>
+      <td id="cell63" class="row6 col3"></td>
+      <td id="cell64" class="row6 col4"></td>
+      <td id="cell65" class="row6 col5"></td>
+      <td id="cell66" class="row6 col6"></td>
+      <td id="cell67" class="row6 col7"></td>
+      <td id="cell68" class="row6 col8"></td>
+      <td id="cell69" class="row6 col9 fixed">4</td>
+    </tr>
+    <tr>
+      <td id="cell71" class="row7 col1 fixed">7</td>
+      <td id="cell72" class="row7 col2"></td>
+      <td id="cell73" class="row7 col3"></td>
+      <td id="cell74" class="row7 col4"></td>
+      <td id="cell75" class="row7 col5 fixed">2</td>
+      <td id="cell76" class="row7 col6"></td>
+      <td id="cell77" class="row7 col7"></td>
+      <td id="cell78" class="row7 col8"></td>
+      <td id="cell79" class="row7 col9"></td>
+    </tr>
+    <tr>
+      <td id="cell81" class="row8 col1"></td>
+      <td id="cell82" class="row8 col2 fixed">2</td>
+      <td id="cell83" class="row8 col3"></td>
+      <td id="cell84" class="row8 col4"></td>
+      <td id="cell85" class="row8 col5"></td>
+      <td id="cell86" class="row8 col6 fixed">5</td>
+      <td id="cell87" class="row8 col7"></td>
+      <td id="cell88" class="row8 col8 fixed">4</td>
+      <td id="cell89" class="row8 col9 fixed">7</td>
+    </tr>
+    <tr>
+      <td id="cell91" class="row9 col1 fixed">1</td>
+      <td id="cell92" class="row9 col2 fixed">6</td>
+      <td id="cell93" class="row9 col3"></td>
+      <td id="cell94" class="row9 col4 fixed">7</td>
+      <td id="cell95" class="row9 col5"></td>
+      <td id="cell96" class="row9 col6 fixed">8</td>
+      <td id="cell97" class="row9 col7 fixed">5</td>
+      <td id="cell98" class="row9 col8"></td>
+      <td id="cell99" class="row9 col9 fixed">2</td>
+    </tr>
+  </tbody>
+</table>
+<table class="keyboard vertical">
+  <tbody>
+    <tr>
+      <td id="keyv1" onclick="keyPress(1);">1</td>
+      <td id="keyv2" onclick="keyPress(2);">2</td>
+      <td id="keyv3" onclick="keyPress(3);">3</td>
+    </tr>
+    <tr>
+      <td id="keyv4" onclick="keyPress(4);">4</td>
+      <td id="keyv5" onclick="keyPress(5);">5</td>
+      <td id="keyv6" onclick="keyPress(6);">6</td>
+    </tr>
+    <tr>
+      <td id="keyv7" onclick="keyPress(7);">7</td>
+      <td id="keyv8" onclick="keyPress(8);">8</td>
+      <td id="keyv9" onclick="keyPress(9);">9</td>
+    </tr>
+    <tr>
+      <td onclick="clearCell();" title="Erase cell"><i class="material-icons">backspace</i></button></td>
+      <td class="trainer enabled" onclick="toggleTrainer();" title="Toggle trainer"><i class="material-icons">school</i></button></td>
+      <td onclick="hint(true);" title="Solve one cell"><i class="material-icons">emoji_objects</i></button></td>
+    </tr>
+  </tbody>
+</table>
+<p class="vertical">
+<button onclick="newGame();">New game</button>
+<select class="level" onchange="levelChanged(this)">
+  <option value="easy">Easy</option>
+  <option value="medium">Medium</option>
+  <option value="hard">Hard</option>
+  <option value="expert">Expert</option>
+</select>
+</p>
+<div style="clear:both;display:block;"></div>
+<table class="keyboard horizontal" style="display:none">
+  <tbody>
+    <tr>
+      <td id="keyh1" onclick="keyPress(1);">1</td>
+      <td id="keyh2" onclick="keyPress(2);">2</td>
+      <td id="keyh3" onclick="keyPress(3);">3</td>
+      <td id="keyh4" onclick="keyPress(4);">4</td>
+      <td id="keyh5" onclick="keyPress(5);">5</td>
+      <td id="keyh6" onclick="keyPress(6);">6</td>
+      <td id="keyh7" onclick="keyPress(7);">7</td>
+      <td id="keyh8" onclick="keyPress(8);">8</td>
+      <td id="keyh9" onclick="keyPress(9);">9</td>
+    </tr>
+    <tr>
+      <td onclick="clearCell();" title="Erase cell"><i class="material-icons">backspace</i></button></td>
+      <td class="trainer enabled" onclick="toggleTrainer();" title="Toggle trainer"><i class="material-icons">school</i></button></td>
+      <td onclick="hint(true);"><i class="material-icons" title="Solve one cell">emoji_objects</i></button></td>
+      <td class="buttons" colspan=99><button type="button" onclick="newGame();">New game</button>
+        <select class="level" onchange="levelChanged(this)">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+          <option value="expert">Expert</option>
+        </select>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="hint" id="hintLastCell">
+  <h3>Last cell in row, line or column</h3>
+  <p id="lastCellText"></p>
+  <div>
+    <button id="lastCellDo" type="button" onclick="showHintLastCell(true);">Do it!</button>
+    <button id="lastCellNext" type="button" onclick="hint(false);">Continue</button>
+  </div>
+</div>
+
+<div class="hint" id="hintElimination">
+  <h3>Eliminate values in a cell</h3>
+  <p id="eliminationText"></p>
+  <div>
+    <button id="eliminationDo" type="button" onclick="showHintElimination(true);">Do it!</button>
+    <button id="eliminationNext" type="button" onclick="hint(false);">Continue</button>
+  </div>
+</div>
+
+<div class="hint" id="hintElimPosSquare">
+  <h3>Eliminate cells from square for a value</h3>
+  <p id="elimPosSquareText"></p>
+  <div>
+    <button id="elimPosSquareDo" type="button" onclick="showHintElimPosSquare(true);">Do it!</button>
+    <button id="elimPosSquareNext" type="button" onclick="hint(false);">Continue</button>
+  </div>
+</div>
+
+<div class="hint" id="hintElimPosRow">
+  <h3>Eliminate cells from row for a value</h3>
+  <p id="elimPosRowText"></p>
+  <div>
+    <button id="elimPosRowDo" type="button" onclick="showHintElimPosRow(true);">Do it!</button>
+    <button id="elimPosRowNext" type="button" onclick="hint(false);">Continue</button>
+  </div>
+</div>
+
+<div class="hint" id="hintElimPosColumn">
+  <h3>Eliminate cells from column for a value</h3>
+  <p class="text" id="elimPosColumnText"></p>
+  <div>
+    <button id="elimPosColumnDo" type="button" onclick="showHintElimPosColumn(true);">Do it!</button>
+    <button id="elimPosColumnNext" type="button" onclick="hint(false);">Continue</button>
+  </div>
+</div>
+
+<div class="hint" id="hintSimplePairs">
+  <h3>Two steps ahead: pairs</h3>
+  <p id="simplePairsText"></p>
+  <div>
+    <button id="simplePairsDo" type="button" onclick="showHintSimplePairs(true);">Do it!</button>
+    <button id="simplePairsNext" type="button" onclick="hint(false);">Continue</button>
+  </div>
+</div>
+
+<div class="hint" id="hintTwoSteps">
+  <h3>More steps ahead: best candidate</h3>
+  <p id="twoStepsText"></p>
+  <div>
+    <button id="twoStepsDo" type="button" onclick="showHintTwoSteps(true);">Do it!</button>
+    <button id="twoStepsNext" type="button" onclick="hint(false);">Continue</button>
+  </div>
+</div>
+
+<a href="https://www.amazon.com/dp/B09GZDT5JQ"><h1>Get the printed book</h1><a>
+
+<div>
+<a href="https://www.amazon.com/dp/B09GZDT5JQ"  style="float:left">
+<img src="front.jpg" width="120" style="margin-right:8px"/>
+</a>
+The Word Sudoku book is now available for purchase on <a href="https://www.amazon.com/dp/B09GZDT5JQ">Amazon</a>!
+<br/><br/>
+The book contains 366 puzzles, each one using a different word, with varying difficulty levels, and solutions.
+<br/><br/>
+Printed on good quality white paper, in large font.
+<br/><br/>
+You can see a small sample of the book <a href="sample.pdf">here</a>.
+</div>
+
+<h1>How to play word sudoku</h1>
+
+<p>In word sudou, you must fill in each row, column or 3x3 block using the letters of a word, instead of numbers.
+Otherwise, normal sudoku rules apply: all letters of the word must be used, without repetitions in rows, columns or blocks.</p>
+
+<p>For example, here is a partially solved board:</p>
+
+<table class="board">
+  <tbody>
+    <tr>
+      <td class="row1 col1 fixed" style="background-color: #ffc">W</td>
+      <td class="row1 col2 fixed" style="background-color: #ffc">O</td>
+      <td class="row1 col3 fixed" style="background-color: #ffc">N</td>
+      <td class="row1 col4 fixed" style="background-color: #cfc">D</td>
+      <td class="row1 col5 fixed" style="background-color: #cfc">E</td>
+      <td class="row1 col6 fixed" style="background-color: #cfc">R</td>
+      <td class="row1 col7 fixed" style="background-color: #cfc">F</td>
+      <td class="row1 col8 fixed" style="background-color: #cfc">U</td>
+      <td class="row1 col9 fixed" style="background-color: #cfc">L</td>
+    </tr>
+    <tr>
+      <td class="row2 col1 fixed" style="background-color: #ffc">F</td>
+      <td class="row2 col2 fixed" style="background-color: #ffc">R</td>
+      <td class="row2 col3 fixed" style="background-color: #ffc">E</td>
+      <td class="row2 col4 fixed"></td>
+      <td class="row2 col5"></td>
+      <td class="row2 col6"></td>
+      <td class="row2 col7"></td>
+      <td class="row2 col8"></td>
+      <td class="row2 col9"></td>
+    </tr>
+    <tr>
+      <td class="row3 col1 fixed" style="background-color: #ffc">D</td>
+      <td class="row3 col2 fixed" style="background-color: #ffc">L</td>
+      <td class="row3 col3 fixed" style="background-color: #ffc">U</td>
+      <td class="row3 col4 fixed"></td>
+      <td class="row3 col5 fixed"></td>
+      <td class="row3 col6"></td>
+      <td class="row3 col7"></td>
+      <td class="row3 col8"></td>
+      <td class="row3 col9 fixed"></td>
+    </tr>
+    <tr>
+      <td class="row4 col1 fixed" style="background-color: #cff">R</td>
+      <td class="row4 col2"></td>
+      <td class="row4 col3"></td>
+      <td class="row4 col4"></td>
+      <td class="row4 col5"></td>
+      <td class="row4 col6"></td>
+      <td class="row4 col7"></td>
+      <td class="row4 col8 fixed"></td>
+      <td class="row4 col9 fixed"></td>
+    </tr>
+    <tr>
+      <td class="row5 col1 fixed" style="background-color: #cff">L</td>
+      <td class="row5 col2"></td>
+      <td class="row5 col3 fixed"></td>
+      <td class="row5 col4"></td>
+      <td class="row5 col5"></td>
+      <td class="row5 col6"></td>
+      <td class="row5 col7 fixed"></td>
+      <td class="row5 col8"></td>
+      <td class="row5 col9"></td>
+    </tr>
+    <tr>
+      <td class="row6 col1 fixed" style="background-color: #cff">U</td>
+      <td class="row6 col2 fixed"></td>
+      <td class="row6 col3"></td>
+      <td class="row6 col4"></td>
+      <td class="row6 col5"></td>
+      <td class="row6 col6"></td>
+      <td class="row6 col7"></td>
+      <td class="row6 col8"></td>
+      <td class="row6 col9 fixed"></td>
+    </tr>
+    <tr>
+      <td class="row7 col1 fixed" style="background-color: #cff">N</td>
+      <td class="row7 col2"></td>
+      <td class="row7 col3"></td>
+      <td class="row7 col4"></td>
+      <td class="row7 col5 fixed"></td>
+      <td class="row7 col6"></td>
+      <td class="row7 col7"></td>
+      <td class="row7 col8"></td>
+      <td class="row7 col9"></td>
+    </tr>
+    <tr>
+      <td class="row8 col1 fixed" style="background-color: #cff">O</td>
+      <td class="row8 col2 fixed"></td>
+      <td class="row8 col3"></td>
+      <td class="row8 col4"></td>
+      <td class="row8 col5"></td>
+      <td class="row8 col6 fixed"></td>
+      <td class="row8 col7"></td>
+      <td class="row8 col8 fixed"></td>
+      <td class="row8 col9 fixed"></td>
+    </tr>
+    <tr>
+      <td class="row9 col1 fixed" style="background-color: #cff">E</td>
+      <td class="row9 col2 fixed"></td>
+      <td class="row9 col3"></td>
+      <td class="row9 col4 fixed"></td>
+      <td class="row9 col5"></td>
+      <td class="row9 col6 fixed"></td>
+      <td class="row9 col7 fixed"></td>
+      <td class="row9 col8"></td>
+      <td class="row9 col9 fixed"></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<script src="games.js"></script>
+<script src="solve.js"></script>
+</body>
+</html>

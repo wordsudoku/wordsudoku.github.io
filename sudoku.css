@@ -1,0 +1,308 @@
+html {
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #555;
+  margin: 10px;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1em;
+  padding-top: 0.5em;
+  border-top: 1px solid #ccc;
+  color: #555;
+}
+
+p {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+li {
+  padding: 0.2em 0;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+select,
+.button {
+  height: 2em;
+  font-size: 0.95em;
+  border-style: solid;
+  border: 1px solid #999;
+  border-radius: 2px;
+  padding: 0em 0.2em;
+  margin: 0px;
+  background: #ccc;
+  color: #111;
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  appearance:none;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 0.25em;
+  padding-right: 20px;
+}
+
+table.board {
+  border-collapse: collapse;
+}
+
+table.board,
+table.keyboard {
+  font-family: 'Varela Round';
+  font-size: 24px;
+  user-select: none;
+  color: #333;
+}
+
+table.board,
+table.board td {
+  border: 1px solid #ddd;
+}
+
+table.board td {
+  width:2em;
+  height:2em;
+  text-align:center;
+  vertical-align:middle;
+}
+
+table.board td.row3,
+table.board td.row6,
+table.board td.row9 {
+  border-bottom: 2px solid #ccc;
+}
+
+table.board td.row1 {
+  border-top: 2px solid #ccc;
+}
+
+table.board td.col3,
+table.board td.col6,
+table.board td.col9 {
+  border-right: 2px solid #ccc;
+}
+
+table.board td.col1 {
+  border-left: 2px solid #ccc;
+}
+
+table.board td {
+  color: #23a3ff;
+}
+
+table.board td.fixed {
+  color: #333;
+}
+
+table.board td.bad {
+  background: #fcc !important;
+}
+
+table.board td.selected {
+  background: #bfe1ff !important;
+}
+
+table.board td.bad.selected {
+  background: #ff9090 !important;
+}
+
+table.board td.glow {
+  text-shadow: 0 0 0.2em;
+}
+
+table.board td.options {
+  background: #eef;
+  color: #aaa;
+  font-size: 50%;
+  word-wrap: break-all;
+  overflow-wrap: break-all;
+}
+
+table.keyboard {
+  border-collapse: collapse;
+}
+
+table.keyboard,
+table.keyboard td {
+  border: 1px solid #ddd;
+}
+
+table.keyboard td {
+  text-align:center;
+  vertical-align:middle;
+  margin: 0;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  background: #ccc;
+  white-space: nowrap;
+}
+
+table.keyboard td.buttons {
+  background: #fff;
+  border-color: #fff;
+  text-align: left;
+}
+
+table.keyboard td.buttons button,
+table.keyboard td.buttons select {
+  height: 100%;
+}
+
+table.keyboard td.enabled {
+  background: #bbb;
+  box-shadow: inset 0px 0px 0.4em rgba(1,1,1,0.5);
+}
+
+table.keyboard td,
+table.board td,
+button {
+  touch-action: manipulation;
+}
+
+table.keyboard.vertical td {
+  width: 3em;
+  height: 3em;
+}
+
+table.keyboard.horizontal {
+  clear: both;
+  border: 0px solid #ddd;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+}
+
+table.keyboard.horizontal td {
+  padding-left: 0.333px;
+  padding-right: 0.333px;
+}
+
+table.keyboard.horizontal {
+  margin-top: -1em;
+}
+
+table#board {
+  float: left;
+  margin-right: 10px;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0;
+  margin: 1em 0 0.5em 0;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0.5em 0 0.25em 0;
+}
+
+.hint {
+  max-width: 34em;
+}
+
+#center {
+  max-width: 34em;
+  margin: auto;
+}
+
+.hint p {
+  font-style: oblique;
+  margin: 0 0 0.5em 0;
+}
+
+.hint p br {
+  margin-top: 0.5em;
+  display: block;
+  line-height: 1em;
+  content: " ";
+}
+
+hr {
+  margin-left: 0;
+  margin-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+p.vertical {
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 16px;
+    margin: 2px;
+  }
+  table.board {
+    font-size: 16px;
+    float: none;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  table.keyboard {
+    font-size: 16px;
+  }
+  .vertical {
+    display: none;
+  }
+  .horizontal {
+    display: block !important;
+  }
+  #center {
+    max-width: initial;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  html {
+    font-size: 20px;
+    margin: 2px;
+  }
+  table.board {
+    font-size: 22px;
+    float: none;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  table.keyboard {
+    font-size: 18px;
+  }
+  .vertical {
+    display: none;
+  }
+  .horizontal {
+    display: block !important;
+  }
+  #center {
+    max-width: initial;
+    margin: 0;
+  }
+}
